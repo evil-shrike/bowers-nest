@@ -1,14 +1,14 @@
 {
   "name": "bowers-nest",
-  "version": "1.0.1",
-  "description": "A Bower registry written for node and express with SQLite3",
-  "main": "server.js",
+  "version": "1.1.0",
+  "description": "A Bower registry on nodejs, express and SQLite3",
+  "main": "runner.js",
   "scripts": {
     "test": "none yet"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/presidenten/bowers-nest"
+    "url": "https://github.com/evil-shrike/bowers-nest"
   },
   "keywords": [
     "Bower",
@@ -21,18 +21,17 @@
   "license": "MIT",
   "dependencies": {
     "express": "~3.4.2",
-    "sqlite3": "~2.1.17"
+    "sqlite3": "~2.1.17",
+    "grunt": "~0.4.1",
+    "matchdep": "~0.3.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "matchdep": "~0.3.0",
     "grunt-contrib-jshint": "~0.6.4",
     "supertest": "~0.8.0",
     "jasmine-node": "~1.11.0",
     "grunt-jasmine-node": "~0.1.0",
+    "grunt-curl": "~1.1.1",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-text-replace": "~0.3.8",
-    "request": "~2.27.0",
-    "request-progress": "~0.3.1"
+    "grunt-text-replace": "~0.3.8"
   }
 }

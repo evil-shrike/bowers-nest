@@ -11,7 +11,8 @@ exports.template400 = template400;
 exports.template404 = template404;
 exports.template406 = template406;
 
-exports.start = function(port){
+
+exports.start = function(server, port){
     if(port === undefined){
         app.listen(9000);
         console.log('Listening on port 9000');
@@ -44,12 +45,19 @@ exports.initDB = initDB;
 app.configure(function () {
     openDB('nest.db');
     initDB(db);
-    app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
+    app.use(express.logger('dev'));     // 'default', 'short', 'tiny', 'dev' 
+   	//app.use('/git', express.static(__dirname + '/../git_repositories'));
+   	app.use('/git', express.static(__dirname + '\\..\\git_repositories'));
+
     app.use(express.bodyParser());
 });
 
+//app.use('/git', express.static(__dirname + '/../git_repositories'));
+
+//console.log('mounting /git to ' + __dirname + '/git_repositories');
+
 app.get('/', function(req, res){
-    res.send('Welcome to Bowers-nest, your private Bower Registry');
+    res.send('Welcome to bower-server. Use /packages for list pacakges');
 });
 
 
